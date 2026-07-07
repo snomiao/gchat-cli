@@ -1,0 +1,31 @@
+{
+  "name": "gchat-cli",
+  "version": "0.1.0",
+  "description": "Google Chat CLI — list spaces, read / send / tail messages, resolve space names, with a send confirm-guard.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snomiao/gchat-cli.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "gchat": "./ts/cli.ts"
+  },
+  "files": ["ts/", "README.md", "LICENSE"],
+  "engines": {
+    "bun": ">=1.1"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "gchat": "bun ts/cli.ts"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22",
+    "@types/yargs": "^17.0.35",
+    "typescript": "^5.6"
+  }
+}
