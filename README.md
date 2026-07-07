@@ -67,34 +67,6 @@ Anywhere a `<space>` is accepted you can pass (exact match wins over substring):
 Resolved names are cached at `~/.config/gchat-cli/spaces.json` for 5 minutes
 (`gchat spaces` refreshes it).
 
-### Examples
-
-```bash
-# list spaces
-gchat spaces
-gchat spaces --format json
-
-# read the last 15 messages of a space (resolved by substring)
-gchat read eng -n 15
-
-# send a NEW thread to a space (two-step confirm)
-gchat send eng "デプロイ完了しました"
-#   … prints recent context + "Re-run within 60s with --code=XXXX to send."
-gchat send eng "デプロイ完了しました" --code=XXXX
-
-# REPLY into a thread — the target is "<space>:<threadId>".
-# The threadId is shown in `read`/`tail` output as "[thread <space>:<threadId>]".
-gchat send "eng:TTTTyyyy" "確認しました"
-gchat send "eng:TTTTyyyy" "確認しました" --code=XXXX
-
-# validate a send without posting anything
-gchat send eng "test" --code=XXXX --dry-run
-
-# live-follow one or many spaces
-gchat tail eng
-gchat watch eng "announce"
-```
-
 ### The send confirm guard
 
 `gchat send` is two-step on purpose: the first call shows the space's recent
@@ -107,6 +79,124 @@ Thread vs. new thread, made explicit:
 - `gchat send eng "..."` → **new top-level thread** in the space.
 - `gchat send "eng:<threadId>" "..."` → **reply** into that thread
   (falls back to a new thread if the id is stale).
+
+## Usage examples
+
+### List spaces — `gchat spaces`
+
+```console
+$ gchat spaces
+id           type  name
+-----------  ----  ----
+AAAAxxxx     room  Engineering
+9pR5yAAAAE   DM    (direct message)
+AAAAf18AgOY  room  announce
+```
+
+```bash
+# machine-readable (full Chat API objects)
+gchat spaces --format json | jq -r '.[] | "\(.name)\t\(.displayName // "(dm)")"'
+
+# `rooms` is an alias
+gchat rooms
+```
+
+### Read recent messages — `gchat read`
+
+```console
+$ gchat read eng -n 3
+[2026-07-07 11:01] user:…885488: 全員へお願いします … [thread AAAAxxxx:N8yHhSGG8Wk]
+[2026-07-07 11:04] user:…340719: すみません、躓きました [thread AAAAxxxx:H1wKYwDJb3g]
+[2026-07-07 16:41] user:…875650: 手順を訂正させてください [thread AAAAxxxx:H1wKYwDJb3g]
+```
+
+```bash
+gchat read Engineering            # by exact displayName
+gchat read AAAAxxxx               # by bare space id
+gchat read eng -n 50             # last 50 messages
+gchat read eng --format json      # raw message objects for scripting
+```
+
+The `[thread <space>:<threadId>]` suffix is copy-pasteable straight into
+`gchat send` to reply (see below).
+
+### Send a message — `gchat send`
+
+Sending is a **two-step confirm**. The first call previews recent context and
+prints a code; re-run the identical command with `--code` to actually post.
+
+```console
+$ gchat send eng "デプロイ完了しました 🚀"
+--- Recent messages ----------------------------
+  [2026-07-07 16:41] user:…875650: 手順を訂正させてください [thread AAAAxxxx:H1wKYwDJb3g]
+--- Sending ------------------------------------
+  → space: Engineering (spaces/AAAAxxxx)
+  → new thread
+  Message: デプロイ完了しました 🚀
+------------------------------------------------
+Re-run within 60s with --code=551f87f5 to send.
+
+$ gchat send eng "デプロイ完了しました 🚀" --code=551f87f5
+✓ sent to spaces/AAAAxxxx (reply with: gchat send "AAAAxxxx:H1wKYwDJb3g" "...")
+```
+
+Reply **into a thread** — the target is `"<space>:<threadId>"`:
+
+```bash
+# threadId comes from `read` / `tail` output, e.g. [thread AAAAxxxx:H1wKYwDJb3g]
+gchat send "eng:H1wKYwDJb3g" "確認しました 👍"
+gchat send "eng:H1wKYwDJb3g" "確認しました 👍" --code=XXXX
+```
+
+Validate a send without posting anything (`--dry-run`):
+
+```console
+$ gchat send eng "test" --code=XXXX --dry-run
+✓ dry-run OK (nothing sent) → spaces/AAAAxxxx
+```
+
+### Follow live — `gchat tail` / `gchat watch`
+
+```bash
+# print the last 10 messages, then poll every 20s for new ones (Ctrl-C to stop)
+gchat tail eng
+
+# tune the backlog and poll interval
+gchat tail eng -n 30 --interval 10
+
+# watch several spaces at once — each line is prefixed with [space]
+gchat watch eng announce
+```
+
+```console
+$ gchat watch eng announce
+[Engineering] [2026-07-07 17:02] user:…875650: PR merged [thread AAAAxxxx:H1wKYwDJb3g]
+[announce]    [2026-07-07 17:03] user:…112233: 全体会は15時です [thread AAAAf18AgOY:Qb2..]
+```
+
+### Check auth — `gchat auth`
+
+```console
+$ gchat auth
+auth method: oauth2  (scopes: 15)
+--- Chat scopes --------------------------------
+  ✓ chat.spaces.readonly    — gchat spaces
+  ✓ chat.messages.readonly  — gchat read / tail / watch
+  ✓ chat.messages.create    — gchat send
+```
+
+### Handy one-liners
+
+```bash
+# grep the last 200 messages of a space
+gchat read eng -n 200 --format json | jq -r '.[].text' | grep -i deploy
+
+# find a space id by name
+gchat spaces --format json | jq -r '.[] | select(.displayName=="Engineering") | .name'
+
+# post the output of a command into a space (two-step, so pipe the code back)
+gchat send eng "$(uptime)"        # then re-run with the printed --code
+```
 
 ## Notes / limitations
 
