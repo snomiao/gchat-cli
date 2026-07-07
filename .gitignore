@@ -2,3 +2,4 @@ node_modules/
 dist/
 .agent-yes/
 *.log
+.playwright-cli-multi-tab/
