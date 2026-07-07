@@ -53,6 +53,7 @@ to grant it.
 | `gchat send <space[:threadId]> "<msg>"` | send (two-step confirm), optionally into a thread |
 | `gchat tail <space> [-n N] [--interval S]` | print backlog then poll for new messages |
 | `gchat watch <space..>` | tail several spaces at once, prefixed with `[name]` |
+| `gchat wait <space> [--timeout DUR]` | block until the next reply from someone else, print it, exit 0 |
 | `gchat auth` | show auth status + required Chat scopes |
 
 ### Space names
@@ -173,6 +174,29 @@ $ gchat watch eng announce
 [Engineering] [2026-07-07 17:02] user:…875650: PR merged [thread AAAAxxxx:H1wKYwDJb3g]
 [announce]    [2026-07-07 17:03] user:…112233: 全体会は15時です [thread AAAAf18AgOY:Qb2..]
 ```
+
+### Wait for a reply — `gchat wait`
+
+`gchat wait` blocks until the **next message from someone other than you**
+arrives, prints it, and exits `0` — the "I asked something, wake me when they
+answer" pattern. Your own sends are ignored (via the People API self-id), so it
+won't return on your own message. It's sugar for `tail --exit-on-message`.
+
+```bash
+# send a question, then block until someone replies
+gchat send "eng:H1wKYwDJb3g" "この方針で進めて大丈夫ですか？" --code=XXXX
+gchat wait "eng:H1wKYwDJb3g"        # returns when a reply lands
+
+# give up after 30 minutes (still exits 0 so a script can branch on it)
+gchat wait eng --timeout 30m
+
+# in a script: act on the reply
+if reply=$(gchat wait eng --timeout 1h); then echo "got: $reply"; fi
+```
+
+`--timeout` accepts `90s`, `30m`, `2h`, `1d`, or a bare number of seconds. The
+same behavior is available on `tail` directly via
+`gchat tail <space> --exit-on-message [--timeout DUR]`.
 
 ### Check auth — `gchat auth`
 

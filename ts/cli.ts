@@ -73,6 +73,8 @@ async function main(): Promise<void> {
           .positional("space", { type: "string", describe: spaceDesc })
           .option("limit", { alias: "n", type: "number", default: 10, describe: "initial backlog count" })
           .option("interval", { type: "number", default: 20, describe: "poll interval in seconds" })
+          .option("exit-on-message", { type: "boolean", default: false, describe: "stop as soon as the first new message from someone else arrives (wait-for-reply)" })
+          .option("timeout", { type: "string", describe: "auto-stop after this long (e.g. 90s, 30m, 2h); exit 0 even if nothing arrived" })
           .option("format", { type: "string", choices: ["text", "json"] as const, default: "text" })
           .demandOption(["space"]),
       async (argv) => {
@@ -81,6 +83,29 @@ async function main(): Promise<void> {
           limit: argv.limit as number,
           interval: argv.interval as number,
           format: argv.format as string,
+          exitOnMessage: argv["exit-on-message"] as boolean,
+          ...(argv.timeout !== undefined ? { timeout: argv.timeout as string } : {}),
+        });
+      },
+    )
+    .command(
+      "wait <space>",
+      'Wait for the next reply, then exit (sugar for `tail --exit-on-message`)',
+      (y) =>
+        y
+          .positional("space", { type: "string", describe: `${spaceDesc}; append :<threadId> to watch a thread` })
+          .option("interval", { type: "number", default: 20, describe: "poll interval in seconds" })
+          .option("timeout", { type: "string", describe: "give up after this long (e.g. 90s, 30m, 2h); still exit 0" })
+          .option("format", { type: "string", choices: ["text", "json"] as const, default: "text" })
+          .demandOption(["space"]),
+      async (argv) => {
+        await cmdTail({
+          space: argv.space as string,
+          limit: 0,
+          interval: argv.interval as number,
+          format: argv.format as string,
+          exitOnMessage: true,
+          ...(argv.timeout !== undefined ? { timeout: argv.timeout as string } : {}),
         });
       },
     )
@@ -112,7 +137,7 @@ async function main(): Promise<void> {
         await cmdAuth({ format: argv.format as string });
       },
     )
-    .demandCommand(1, "Pick a command: spaces | read | send | tail | watch | auth")
+    .demandCommand(1, "Pick a command: spaces | read | send | tail | watch | wait | auth")
     .strict()
     .help()
     .alias("h", "help")

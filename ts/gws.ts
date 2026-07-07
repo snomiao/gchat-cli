@@ -215,3 +215,31 @@ export interface AuthStatus {
 export async function authStatus(): Promise<AuthStatus> {
   return gwsJson<AuthStatus>(["auth", "status"]);
 }
+
+interface PeopleMe {
+  metadata?: { sources?: Array<{ type?: string; id?: string }> };
+}
+
+// The caller's own Chat user resource name ("users/<id>"), via the People API.
+// The PROFILE source id matches the numeric id Chat puts in `sender.name`, so
+// this lets `wait` skip the caller's own messages. Returns null if it can't be
+// determined (e.g. missing People scope) — callers degrade to "any new message".
+export async function getSelfUserId(): Promise<string | null> {
+  try {
+    const me = await gwsJson<PeopleMe>([
+      "people",
+      "people",
+      "get",
+      "--params",
+      JSON.stringify({ resourceName: "people/me", personFields: "metadata" }),
+    ]);
+    const sources = me.metadata?.sources ?? [];
+    const profile =
+      sources.find((s) => s.type === "PROFILE") ??
+      sources.find((s) => s.type === "DOMAIN_PROFILE");
+    const id = profile?.id;
+    return id ? `users/${id}` : null;
+  } catch {
+    return null;
+  }
+}
