@@ -48,7 +48,7 @@ to grant it.
 
 | command | purpose |
 | --- | --- |
-| `gchat spaces` | list spaces (newest activity first); `rooms` is an alias |
+| `gchat spaces` | list spaces (newest activity first); `rooms` and `ls` are aliases |
 | `gchat read <space> [-n N]` | last N messages, human-readable |
 | `gchat send <space[:threadId]> "<msg>"` | send (two-step confirm), optionally into a thread |
 | `gchat tail <space> [-n N] [--interval S]` | print backlog then poll for new messages |
@@ -97,7 +97,7 @@ AAAAf18AgOY  room  announce
 # machine-readable (full Chat API objects)
 gchat spaces --format json | jq -r '.[] | "\(.name)\t\(.displayName // "(dm)")"'
 
-# `rooms` is an alias
+# `rooms` and `ls` are aliases
 gchat rooms
 ```
 

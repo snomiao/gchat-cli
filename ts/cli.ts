@@ -17,7 +17,7 @@ async function main(): Promise<void> {
     .scriptName("gchat")
     .usage("$0 <command> [args]")
     .command(
-      ["spaces", "rooms"],
+      ["spaces", "rooms", "ls"],
       "List spaces you're a member of (newest activity first)",
       (y) =>
         y.option("format", {
