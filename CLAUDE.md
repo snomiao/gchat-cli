@@ -6,12 +6,13 @@ the nested-JSON Chat API calls, resolves space names, and renders messages.
 
 ## Layout
 
-- `ts/cli.ts` — yargs entrypoint (commands: `spaces`/`rooms`/`ls`, `read`, `send`, `tail`, `watch`, `wait`, `auth`).
-- `wait` = `tail --exit-on-message` sugar: blocks until the next message from
-  someone *other than you* and exits 0. Own-message filtering uses
-  `getSelfUserId()` (People API `people/me` → PROFILE source id, which equals the
-  Chat `users/<id>`); if unavailable it degrades to "any new message". `--timeout`
-  parses `90s/30m/2h/1d` via `parseDuration()`.
+- `ts/cli.ts` — yargs entrypoint (commands: `spaces`/`rooms`/`ls`, `read`, `send`, `tail`, `watch`, `auth`).
+- `tail --exit-on-message` = wait-for-reply (matches slack-term; no separate
+  `wait` command, since neither slack-cli nor chatwork-cli has one): blocks until
+  the next message from someone *other than you* and exits 0. Own-message
+  filtering uses `getSelfUserId()` (People API `people/me` → PROFILE source id,
+  which equals the Chat `users/<id>`); if unavailable it degrades to "any new
+  message". `--timeout` parses `90s/30m/2h/1d` via `parseDuration()`.
 - `ts/gws.ts` — the only place that shells out to `gws`. `gwsJson()` runs a
   command, parses JSON off **stdout**, and turns Google's `{"error":{…}}`
   envelope into a `GwsError` (with `.isScope` for 403). Typed helpers:

@@ -89,27 +89,6 @@ async function main(): Promise<void> {
       },
     )
     .command(
-      "wait <space>",
-      'Wait for the next reply, then exit (sugar for `tail --exit-on-message`)',
-      (y) =>
-        y
-          .positional("space", { type: "string", describe: `${spaceDesc}; append :<threadId> to watch a thread` })
-          .option("interval", { type: "number", default: 20, describe: "poll interval in seconds" })
-          .option("timeout", { type: "string", describe: "give up after this long (e.g. 90s, 30m, 2h); still exit 0" })
-          .option("format", { type: "string", choices: ["text", "json"] as const, default: "text" })
-          .demandOption(["space"]),
-      async (argv) => {
-        await cmdTail({
-          space: argv.space as string,
-          limit: 0,
-          interval: argv.interval as number,
-          format: argv.format as string,
-          exitOnMessage: true,
-          ...(argv.timeout !== undefined ? { timeout: argv.timeout as string } : {}),
-        });
-      },
-    )
-    .command(
       "watch <spaces..>",
       "Tail multiple spaces concurrently; each line is prefixed with [space]",
       (y) =>
@@ -137,7 +116,7 @@ async function main(): Promise<void> {
         await cmdAuth({ format: argv.format as string });
       },
     )
-    .demandCommand(1, "Pick a command: spaces | read | send | tail | watch | wait | auth")
+    .demandCommand(1, "Pick a command: spaces | read | send | tail | watch | auth")
     .strict()
     .help()
     .alias("h", "help")
