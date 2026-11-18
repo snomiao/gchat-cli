@@ -50,7 +50,7 @@ the nested-JSON Chat API calls, resolves space names, and renders messages.
 ## Dev
 
 ```bash
-bun run typecheck   # tsc --noEmit, strict
+bun run typecheck   # tsrs --noEmit, strict
 bun test            # no network — fake gws binary
 ```
 
