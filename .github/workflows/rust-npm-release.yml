@@ -1,0 +1,48 @@
+# Build and install test of the Rust port, on the rustify pipeline.
+# From rustify's templates/github/rust-npm-release.yml, with the `publish` and
+# `verify` jobs and the `workflow_call` trigger removed: this workflow cannot
+# publish anything. Releases are still cut by release.yml (semantic-release).
+#
+# A pull request builds every platform, runs the parity cases against the
+# Linux binary, and smoke-tests the install on Linux, macOS and Windows.
+
+name: rust-npm-release
+
+on:
+  pull_request:
+    paths:
+      - "rs/**"
+      # The parity cases compare the binary with the TypeScript, so a change
+      # to either side has to run them.
+      - "ts/**"
+      - "package.json"
+      - "bun.lock"
+      - ".github/workflows/rust-npm-release.yml"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to build, without a leading v (default: the version in Cargo.toml)"
+        required: false
+        type: string
+      npm_tag:
+        description: "npm dist-tag the packages are packed for (nothing is published)"
+        required: false
+        default: latest
+        type: string
+
+jobs:
+  build:
+    uses: snomiao/rustify/.github/workflows/rust-npm-build.yml@releases/v1
+    with:
+      manifest: rs/Cargo.toml
+      bins: gchat-cli
+      # Handed back to the JavaScript, which reads the version from the
+      # package.json it is installed with.
+      smoke: gchat --version
+      version: ${{ inputs.version }}
+      npm-tag: ${{ inputs.npm_tag || 'latest' }}
+      # The binary hands back to ts/cli.ts, which needs no build. dist/cli.js
+      # is built because the package ships it today (`files` lists dist/).
+      js-build: bun install --frozen-lockfile && bun run build
+      smoke-extra: |
+        gchat --help => gchat <command> [args]
