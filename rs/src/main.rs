@@ -51,6 +51,7 @@ fn main() {
         Some("auth") if native() => run!(commands::auth::command),
         Some("spaces" | "rooms" | "ls") if native() => run!(commands::spaces::command),
         Some("read") if native() => run!(commands::read::command),
+        Some("send") if native() => run!(commands::send::command),
         _ => {}
     }
     js_fallback::run(JS_ENTRY)

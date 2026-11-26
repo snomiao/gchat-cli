@@ -125,32 +125,47 @@ fn format_time(create_time: Option<&Json>) -> Result<String, Fail> {
 }
 
 /// "spaces/X/threads/ABC" | "spaces/X/messages/ABC.DEF" → "ABC" (the thread id).
+///
+/// Written for strings. The other outcomes are what the same JavaScript does
+/// to other values: most throw, and a list has `slice` and `lastIndexOf` of
+/// its own.
 pub fn thread_id_of(m: &Json) -> Result<String, TypeError> {
-    let after_slash = |text: &str| text[text.rfind('/').map_or(0, |at| at + 1)..].to_string();
-    let not_a_string = |what: &str| {
-        TypeError(format!("{what}.lastIndexOf is not a function. (In '{what}.lastIndexOf(\"/\")', '{what}.lastIndexOf' is undefined)"))
-    };
+    // `value.slice(value.lastIndexOf("/") + 1)`
+    fn after_slash(value: &Json, what: &str) -> Result<Json, TypeError> {
+        match value {
+            Json::Str(text) => Ok(Json::Str(text[text.rfind('/').map_or(0, |at| at + 1)..].to_string())),
+            Json::Arr(items) => {
+                let from = items.iter().rposition(|item| item.as_str() == Some("/")).map_or(0, |at| at + 1);
+                Ok(Json::Arr(items[from..].to_vec()))
+            }
+            _ => Err(TypeError(format!(
+                "{what}.lastIndexOf is not a function. (In '{what}.lastIndexOf(\"/\")', '{what}.lastIndexOf' is undefined)"
+            ))),
+        }
+    }
     let thread = m.prop("thread").map_err(|_| TypeError("null is not an object (evaluating 'm.thread')".to_string()))?;
     // `m.thread?.name`
     let thread_name = match thread {
         None | Some(Json::Null) => None,
         Some(thread) => thread.prop("name").ok().flatten(),
     };
-    match thread_name {
-        Some(Json::Str(name)) if !name.is_empty() => return Ok(after_slash(name)),
-        Some(other) if other.truthy() => return Err(not_a_string("t")),
-        _ => {}
+    if let Some(name) = thread_name.filter(|name| name.truthy()) {
+        return Ok(after_slash(name, "t")?.to_js_string());
     }
     // Fall back to the message-id prefix (Chat uses <threadId>.<msgId>).
     let message_id = match m.prop("name").ok().flatten() {
-        Some(Json::Str(name)) => after_slash(name),
         None => return Err(TypeError("undefined is not an object (evaluating 'm.name.slice')".to_string())),
         Some(Json::Null) => return Err(TypeError("null is not an object (evaluating 'm.name.slice')".to_string())),
-        Some(_) => return Err(not_a_string("m.name")),
+        Some(name) => after_slash(name, "m.name")?,
     };
-    Ok(match message_id.find('.') {
-        Some(dot) => message_id[..dot].to_string(),
-        None => message_id,
+    // `dot === -1 ? msgId : msgId.slice(0, dot)`
+    Ok(match &message_id {
+        Json::Str(id) => id.find('.').map_or(id.as_str(), |dot| &id[..dot]).to_string(),
+        Json::Arr(items) => {
+            let dot = items.iter().position(|item| item.as_str() == Some(".")).unwrap_or(items.len());
+            Json::Arr(items[..dot].to_vec()).to_js_string()
+        }
+        other => other.to_js_string(),
     })
 }
 

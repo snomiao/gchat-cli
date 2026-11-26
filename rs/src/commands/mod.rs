@@ -2,4 +2,5 @@
 
 pub mod auth;
 pub mod read;
+pub mod send;
 pub mod spaces;
