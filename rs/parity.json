@@ -13238,24 +13238,23 @@
     "spaces/AAAAeng1",
     "spaces/AAAAeng2",
     "--interval",
-    "0.3"
+    "0.8"
    ],
    "env": {
     "TZ": "UTC",
     "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
-    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
    },
    "files": {
     "tmp/.keep": "",
-    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
    },
    "setup": [
     "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
    ],
    "after": [
     "sort gws-calls.jsonl"
-   ],
-   "handed": "back"
+   ]
   },
   {
    "name": "watch: two spaces by display name",
@@ -13264,18 +13263,16 @@
     "Engineering",
     "Leads",
     "--interval",
-    "0.3",
-    "-n",
-    "1"
+    "0.8"
    ],
    "env": {
     "TZ": "UTC",
     "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
-    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
    },
    "files": {
     "tmp/.keep": "",
-    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
    },
    "setup": [
     "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
@@ -13283,8 +13280,60 @@
    "after": [
     "sort gws-calls.jsonl",
     "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "watch: -n 1 seeds one message per space",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval=0.8",
+    "-n",
+    "1"
    ],
-   "handed": "back"
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: options between the spaces",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "--limit",
+    "5",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort gws-calls.jsonl"
+   ]
   },
   {
    "name": "watch: JSON lines carry the space",
@@ -13293,26 +13342,104 @@
     "spaces/AAAAeng1",
     "spaces/AAAAeng2",
     "--interval",
-    "0.3",
+    "0.8",
     "--format",
     "json"
    ],
    "env": {
     "TZ": "UTC",
     "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
-    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
    },
    "files": {
     "tmp/.keep": "",
-    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
    },
    "setup": [
     "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
    ],
    "after": [
     "sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: JSON lines for messages that have a space of their own",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8",
+    "--format=json"
    ],
-   "handed": "back"
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"7\":\"seven\",\"name\":\"a1\",\"space\":{\"name\":\"spaces/AAAAeng1\"},\"text\":\"x\"}]}},{\"json\":{\"messages\":[{\"name\":\"a1\"}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"2\":\"two\",\"name\":\"b1\",\"space\":\"mine\",\"z\":null}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"b2\",\"text\":\"new\"},{\"name\":\"b1\"}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: the label is the id when a space has no name",
+   "args": [
+    "watch",
+    "BBBBdm01",
+    "launch",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/BBBBdm01\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/BBBBdm01/messages/D.1\",\"text\":\"dm\",\"createTime\":\"2026-07-07T12:00:00Z\"}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/CCCCgrp1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/CCCCgrp1/messages/G.1\",\"text\":\"group\",\"createTime\":\"2026-07-07T12:00:00Z\"}]},\"sleep\":400},{\"json\":{\"messages\":[]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "watch: resolved from a fresh cache without asking gws",
+   "args": [
+    "watch",
+    "Engineering",
+    "Leads",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}",
+    "cache.tpl": "{\n  \"fetched_at\": __T__,\n  \"spaces\": [\n    {\n      \"name\": \"spaces/AAAAeng1\",\n      \"displayName\": \"Engineering\",\n      \"type\": \"SPACE\"\n    },\n    {\n      \"name\": \"spaces/AAAAeng2\",\n      \"displayName\": \"Engineering Leads\",\n      \"type\": \"SPACE\"\n    },\n    {\n      \"name\": \"spaces/BBBBdm01\",\n      \"displayName\": \"\",\n      \"type\": \"DIRECT_MESSAGE\"\n    },\n    {\n      \"name\": \"spaces/CCCCgrp1\",\n      \"displayName\": \"launch party 🚀\",\n      \"type\": \"GROUP_CHAT\"\n    },\n    {\n      \"name\": \"spaces/DDDDja01\",\n      \"displayName\": \"日本語チーム\",\n      \"type\": \"SPACE\"\n    }\n  ]\n}\n"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'",
+    "mkdir -p \"$HOME/.config/gchat-cli\" && sed \"s/__T__/$(( ($(date +%s) - 0) * 1000 ))/\" cache.tpl > \"$HOME/.config/gchat-cli/spaces.json\""
+   ],
+   "after": [
+    "sort gws-calls.jsonl"
+   ]
   },
   {
    "name": "watch: one space",
@@ -13325,7 +13452,7 @@
    "env": {
     "TZ": "UTC",
     "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
-    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
    },
    "files": {
     "tmp/.keep": "",
@@ -13336,8 +13463,57 @@
    ],
    "after": [
     "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: an empty space next to a busy one",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8"
    ],
-   "handed": "back"
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[]},\"sleep\":400},{\"json\":{\"messages\":[]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: a failed poll in one space does not stop the others",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}}]}},{\"json\":{\"error\":{\"code\":503,\"message\":\"The service is currently unavailable.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: The service is currently unavailable.\\n\",\"exit\":1},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"stdout\":\"not json\"},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort gws-calls.jsonl"
+   ]
   },
   {
    "name": "watch: no such space",
@@ -13349,7 +13525,7 @@
    "env": {
     "TZ": "UTC",
     "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
-    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
    },
    "files": {
     "tmp/.keep": "",
@@ -13359,12 +13535,84 @@
     "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
    ],
    "after": [
-    "sort gws-calls.jsonl"
-   ],
-   "handed": "back"
+    "sleep 1; sort gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
   },
   {
-   "name": "watch: the first request for a space fails",
+   "name": "watch: no such space, the only one",
+   "args": [
+    "watch",
+    "marketing",
+    "--interval",
+    "1"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sleep 1; sort gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "watch: an ambiguous space among full names",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "Engineer",
+    "spaces/AAAAeng2"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sleep 1; sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: the space list fails",
+   "args": [
+    "watch",
+    "Engineering",
+    "Leads"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"error\":{\"code\":403,\"message\":\"Request had insufficient authentication scopes.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: Request had insufficient authentication scopes.\\n\",\"exit\":1}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sleep 1; sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: the first request for the only space fails",
    "args": [
     "watch",
     "spaces/AAAAeng1"
@@ -13372,11 +13620,83 @@
    "env": {
     "TZ": "UTC",
     "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
-    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
    },
    "files": {
     "tmp/.keep": "",
     "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"replies\":[{\"json\":{\"error\":{\"code\":404,\"message\":\"Space not found.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: Space not found.\\n\",\"exit\":1}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sleep 1; sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: the first request for the second space fails after the first printed",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"error\":{\"code\":404,\"message\":\"Space not found.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: Space not found.\\n\",\"exit\":1,\"sleep\":400}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sleep 1; sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: the first request for the first space fails before the second answers",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"error\":{\"code\":403,\"message\":\"Request had insufficient authentication scopes.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: Request had insufficient authentication scopes.\\n\",\"exit\":1}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"never printed\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sleep 1; sort gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "watch: gws cannot be started",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/nonexistent/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": ""
    },
    "setup": [
     "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
@@ -13387,9 +13707,57 @@
    "handed": "back"
   },
   {
+   "name": "watch: a backlog message of an odd shape, in the first space to answer",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"a\",\"text\":5,\"createTime\":\"2026-07-07T10:00:00Z\"}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"never printed\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [],
+   "handed": "late"
+  },
+  {
    "name": "watch: no spaces given",
    "args": [
     "watch"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "watch: only options",
+   "args": [
+    "watch",
+    "-n",
+    "3"
    ],
    "env": {
     "TZ": "UTC",
@@ -13422,7 +13790,7 @@
    },
    "files": {
     "tmp/.keep": "",
-    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
    },
    "setup": [
     "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
@@ -13447,7 +13815,89 @@
    },
    "files": {
     "tmp/.keep": "",
-    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "watch: a limit that is not a number",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "-n",
+    "x",
+    "--interval",
+    "0.05"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "watch: an interval that is not a number",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "--interval",
+    "soon"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "normalize": [
+    [
+     "\\(node:\\d+\\)",
+     "(node:<PID>)"
+    ]
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "watch: an empty space argument",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    ""
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
    },
    "setup": [
     "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
@@ -13477,6 +13927,33 @@
    ],
    "after": [
     "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "watch: GCHAT_CLI_NO_NATIVE hands it back",
+   "args": [
+    "watch",
+    "spaces/AAAAeng1",
+    "spaces/AAAAeng2",
+    "--interval",
+    "0.8"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port",
+    "GCHAT_CLI_NO_NATIVE": "1"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng1\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng1/messages/NEWA.M9\",\"formattedText\":\"*bold* only formatted\",\"createTime\":\"2026-07-06T23:30:00Z\",\"sender\":{\"name\":\"users/1234567\",\"displayName\":\"Ada Lovelace\",\"type\":\"HUMAN\"}},{\"name\":\"spaces/AAAAeng1/messages/THR3.MSG5\",\"text\":\"deploy done ✅\",\"createTime\":\"2026-07-07T09:15:00.999999Z\",\"sender\":{\"name\":\"users/114836537158851875650\",\"type\":\"HUMAN\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR3\"}},{\"name\":\"spaces/AAAAeng1/messages/THR2.MSG4\",\"text\":\"line one\\n\\n   line two\\r\\n\\tline three  \",\"createTime\":\"2026-07-07T08:59:59.9999Z\",\"sender\":{\"name\":\"users/99\",\"type\":\"BOT\"},\"thread\":{\"name\":\"spaces/AAAAeng1/threads/THR2\"},\"threadReply\":true}]}}]},{\"args\":[\"chat\",\"spaces\",\"messages\",\"list\"],\"has\":\"spaces/AAAAeng2\",\"replies\":[{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]},\"sleep\":400},{\"json\":{\"messages\":[{\"name\":\"spaces/AAAAeng2/messages/B2.M2\",\"text\":\"second in leads\",\"createTime\":\"2026-07-07T11:02:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}},{\"name\":\"spaces/AAAAeng2/messages/B1.M1\",\"text\":\"first in leads\",\"createTime\":\"2026-07-07T11:01:00Z\",\"sender\":{\"name\":\"users/300000000000000000003\"}}]}},{\"killParent\":\"SIGTERM\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort gws-calls.jsonl"
    ],
    "handed": "back"
   },

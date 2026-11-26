@@ -153,6 +153,7 @@ const cases = [];
  *   pending  { space, message, age } a pending send written `age` seconds ago, or { ..., raw }
  *   setup    extra setup commands
  *   after    probes (default: the calls the fake gws received)
+ *   normalize  extra rules for this case
  *   handed   "back" or "late" (set by back() and late())
  */
 function add(name, args, o = {}) {
@@ -181,7 +182,7 @@ function add(name, args, o = {}) {
     files,
     setup,
     after: o.handed === "late" ? after.map((probe) => (probe === CALLS ? CALLS_DISTINCT : probe)) : after,
-    ...(o.timeout ? { timeout: o.timeout } : {}),
+    ...(o.normalize ? { normalize: o.normalize } : {}),
     ...(o.handed ? { handed: o.handed } : {}),
   });
 }
