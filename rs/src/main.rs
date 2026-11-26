@@ -49,6 +49,7 @@ fn main() {
     match args.first().map(String::as_str) {
         // One arm per ported command, added once its parity cases pass.
         Some("auth") if native() => run!(commands::auth::command),
+        Some("spaces" | "rooms" | "ls") if native() => run!(commands::spaces::command),
         _ => {}
     }
     js_fallback::run(JS_ENTRY)
