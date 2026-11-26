@@ -42,7 +42,7 @@ fn main() {
     macro_rules! run {
         ($command:path) => {
             if let Some(command) = $command(&args[1..]) {
-                rt::finish(command())
+                rt::run(command)
             }
         };
     }
@@ -52,6 +52,7 @@ fn main() {
         Some("spaces" | "rooms" | "ls") if native() => run!(commands::spaces::command),
         Some("read") if native() => run!(commands::read::command),
         Some("send") if native() => run!(commands::send::command),
+        Some("tail") if native() => run!(commands::tail::command),
         _ => {}
     }
     js_fallback::run(JS_ENTRY)

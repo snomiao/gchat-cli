@@ -50,6 +50,19 @@ impl From<crate::json::NullAccess> for Fail {
     }
 }
 
+/// Reading `expression` threw because the object was null: the TypeError of
+/// the TypeScript, in bun's words. The text matters where it can still reach
+/// the user (a poll error of a running tail, a standalone binary).
+pub fn null_access(expression: &str) -> Fail {
+    Fail::Unsupported(format!("null is not an object (evaluating '{expression}')"))
+}
+
+/// Calling `method` on `expression` threw because the value has no such
+/// method (it is not a string, or not a list), again in bun's words.
+pub fn not_a_function(expression: &str, call: &str) -> Fail {
+    Fail::Unsupported(format!("{expression} is not a function. (In '{call}', '{expression}' is undefined)"))
+}
+
 pub fn unsupported<T>(why: impl Into<String>) -> Result<T, Fail> {
     Err(Fail::Unsupported(why.into()))
 }
@@ -84,8 +97,26 @@ pub fn err(line: &str) {
     let _ = stderr.write_all(line.as_bytes()).and_then(|_| stderr.write_all(b"\n"));
 }
 
+/// Runs a ported command to its end.
+///
+/// A bug in a ported command must not cost the user their command: a panic
+/// while the invocation can still be handed back hands it back, silently.
+pub fn run(command: impl FnOnce() -> Result<i32, Fail>) -> ! {
+    let report = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        if !can_hand_back() {
+            report(info);
+        }
+    }));
+    match std::panic::catch_unwind(std::panic::AssertUnwindSafe(command)) {
+        Ok(result) => finish(result),
+        Err(_) if can_hand_back() => crate::js_fallback::run(crate::JS_ENTRY),
+        Err(_) => std::process::exit(101),
+    }
+}
+
 /// Ends the process the way `main().catch(...)` in ts/cli.ts does.
-pub fn finish(result: Result<i32, Fail>) -> ! {
+fn finish(result: Result<i32, Fail>) -> ! {
     let code = match result {
         Ok(code) => code,
         Err(Fail::Gws(e)) => {

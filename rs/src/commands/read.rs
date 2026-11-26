@@ -33,7 +33,7 @@ pub fn first(messages: &[Json], limit: i64) -> &[Json] {
 
 /// The lines for `messages`, which are in the order to print.
 pub fn format_messages(messages: &[&Json], space_id: &str) -> Result<Vec<String>, Fail> {
-    messages.iter().map(|m| format_message(m, space_id)).collect()
+    messages.iter().map(|m| format_message(m, space_id, false)).collect()
 }
 
 fn run(space: &str, limit: i64, json: bool) -> Result<i32, Fail> {

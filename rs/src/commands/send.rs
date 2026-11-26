@@ -58,7 +58,7 @@ fn context(space_arg: &str, thread_id: Option<&str>, message: &str) -> Result<Ve
         dest = if space.display_name.is_empty() { space.name.clone() } else { format!("{} ({})", space.display_name, space.name) };
         let messages = list_messages(&space.name, 3.0)?;
         for m in messages.iter().take(3).rev() {
-            recent.push(format!("  {}", format_message(m, space_id(&space.name))?));
+            recent.push(format!("  {}", format_message(m, space_id(&space.name), false)?));
         }
         Ok(())
     })();

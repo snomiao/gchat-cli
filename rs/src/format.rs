@@ -10,7 +10,7 @@ use jiff::tz::{Offset, TimeZone};
 
 use crate::json::{is_js_whitespace, js_len, js_suffix, Json};
 use crate::resolver::space_id;
-use crate::rt::{unsupported, Fail};
+use crate::rt::{not_a_function, null_access, unsupported, Fail};
 
 /// What JavaScript throws when a value has the wrong type, with the text bun
 /// prints for it. Only `gchat send` shows one: after a message was posted
@@ -108,20 +108,37 @@ fn parse_timestamp(iso: &str) -> Option<i64> {
     Some(Offset::from_seconds(offset).ok()?.to_timestamp(civil).ok()?.as_second())
 }
 
+fn local_minute(second: i64, zone: &TimeZone) -> Option<String> {
+    let local = zone.to_datetime(jiff::Timestamp::from_second(second).ok()?);
+    Some(format!("{}-{:02}-{:02} {:02}:{:02}", local.year(), local.month(), local.day(), local.hour(), local.minute()))
+}
+
 /// ISO 8601 → "YYYY-MM-DD HH:MM" in local time. A message without a
 /// `createTime` shows as `undefined`, as in the TypeScript.
-fn format_time(create_time: Option<&Json>) -> Result<String, Fail> {
-    let iso = match create_time {
+///
+/// `lenient` is for a tail that is already running, where there is no handing
+/// back: a time Rust does not read is then shown as it came (which is also
+/// what the TypeScript shows for a time JavaScript cannot read).
+fn format_time(create_time: Option<&Json>, lenient: bool) -> Result<String, Fail> {
+    let zone = match local_zone() {
+        Ok(zone) => zone,
+        Err(_) if lenient => TimeZone::system(),
+        Err(unsupported) => return Err(unsupported),
+    };
+    let known = match create_time {
         None => return Ok("undefined".to_string()),
-        Some(Json::Str(iso)) => iso,
-        Some(_) => return unsupported("a message whose createTime is not a string"),
+        Some(Json::Str(iso)) => parse_timestamp(iso).and_then(|second| local_minute(second, &zone)),
+        // `new Date(null)` is the epoch, `new Date(number)` that many milliseconds.
+        Some(Json::Null) if lenient => local_minute(0, &zone),
+        Some(Json::Num(ms)) if lenient && ms.is_finite() => local_minute((ms / 1000.0).floor() as i64, &zone),
+        Some(_) => None,
     };
-    let Some(second) = parse_timestamp(iso) else {
-        return unsupported(format!("a createTime in a notation Rust does not read: {iso}"));
-    };
-    let timestamp = jiff::Timestamp::from_second(second).or_else(|e| unsupported(e.to_string()))?;
-    let local = local_zone()?.to_datetime(timestamp);
-    Ok(format!("{}-{:02}-{:02} {:02}:{:02}", local.year(), local.month(), local.day(), local.hour(), local.minute()))
+    match (known, create_time) {
+        (Some(text), _) => Ok(text),
+        (None, Some(shown)) if lenient => Ok(shown.to_js_string()),
+        (None, Some(Json::Str(iso))) => unsupported(format!("a createTime in a notation Rust does not read: {iso}")),
+        (None, _) => unsupported("a message whose createTime is not a string"),
+    }
 }
 
 /// "spaces/X/threads/ABC" | "spaces/X/messages/ABC.DEF" → "ABC" (the thread id).
@@ -177,7 +194,7 @@ fn short_sender(m: &Json) -> Result<String, Fail> {
         match sender.map(|s| s.prop(key)).transpose()?.flatten().filter(|v| v.truthy()) {
             None => Ok(None),
             Some(Json::Str(text)) => Ok(Some(text)),
-            Some(_) => unsupported(format!("a sender whose {key} is not a string")),
+            Some(_) => Err(not_a_function("raw.startsWith", "raw.startsWith(\"users/\")")),
         }
     };
     let raw = match field("displayName")? {
@@ -221,8 +238,8 @@ fn one_line(text: &str) -> String {
 
 /// Renders one message. `space_id` (short) is included in the thread hint so
 /// the user can copy "<spaceId>:<threadId>" straight into `gchat send`.
-pub fn format_message(m: &Json, space_id: &str) -> Result<String, Fail> {
-    let time = format_time(m.prop("createTime")?)?;
+pub fn format_message(m: &Json, space_id: &str, lenient: bool) -> Result<String, Fail> {
+    let time = format_time(m.prop("createTime").map_err(|_| null_access("m.createTime"))?, lenient)?;
     let who = short_sender(m)?;
     // `m.text ?? m.formattedText ?? m.argumentText ?? "(no text)"`
     let mut body = "(no text)";
@@ -233,7 +250,8 @@ pub fn format_message(m: &Json, space_id: &str) -> Result<String, Fail> {
                 body = text;
                 break;
             }
-            Some(_) => return unsupported(format!("a message whose {key} is not a string")),
+            // bun words this one differently (the call holds a non-ASCII character).
+            Some(_) => return unsupported("undefined is not a function (near '...text.replace(/\\s*\\n\\s*/g, \" \\u23CE \")...')"),
         }
     }
     let thread = thread_id_of(m)?;

@@ -3,7 +3,7 @@
 use std::process::{Command, Stdio};
 
 use crate::json::{self, js_prefix, js_trim, object, string, Json, ParseError};
-use crate::rt::{self, unsupported, Fail, GwsError};
+use crate::rt::{self, null_access, unsupported, Fail, GwsError};
 
 /// `process.env.GCHAT_GWS_BIN || "gws"`.
 fn gws_bin() -> Result<String, Fail> {
@@ -203,7 +203,7 @@ pub fn list_spaces() -> Result<Vec<Json>, Fail> {
             params.set("pageToken", token.clone());
         }
         let res = gws_json(&args(&["chat", "spaces", "list", "--params"], vec![params.compact()]))?;
-        match res.prop("spaces")? {
+        match res.prop("spaces").map_err(|_| null_access("res.spaces"))? {
             Some(Json::Arr(page)) => spaces.extend(page.iter().cloned()),
             // `if (res.spaces)`: anything falsy is no page.
             Some(other) if other.truthy() => return unsupported("gws returned `spaces` that is not a list"),
@@ -216,18 +216,37 @@ pub fn list_spaces() -> Result<Vec<Json>, Fail> {
     }
 }
 
-/// Lists recent messages of a space, newest first.
-pub fn list_messages(space_name: &str, page_size: f64) -> Result<Vec<Json>, Fail> {
+/// Asks for recent messages of a space, newest first, and returns
+/// `res.messages ?? []` whatever it is.
+pub fn list_messages_value(space_name: &str, page_size: f64) -> Result<Json, Fail> {
     let params = object([
         ("parent", string(space_name)),
         ("pageSize", Json::Num(page_size)),
         ("orderBy", string("createTime desc")),
     ]);
     let res = gws_json(&args(&["chat", "spaces", "messages", "list", "--params"], vec![params.compact()]))?;
-    match res.prop_nullish("messages")? {
-        None => Ok(Vec::new()),
-        Some(Json::Arr(messages)) => Ok(messages.clone()),
-        Some(_) => unsupported("gws returned `messages` that is not a list"),
+    // gws printed nothing: the TypeError of `res.messages`, which bun words
+    // with the source text of the whole `await` it stands for.
+    let messages = res.prop_nullish("messages").map_err(|_| {
+        null_access(concat!(
+            "(await gwsJson([\n",
+            "    \"chat\",\n",
+            "    \"spaces\",\n",
+            "    \"messages\",\n",
+            "    \"list\",\n",
+            "    \"--params\",\n",
+            "    JSON.stringify({ parent: spaceName, pageSize, orderBy: \"createTime desc\" })\n",
+            "  ])).messages"
+        ))
+    })?;
+    Ok(messages.cloned().unwrap_or(Json::Arr(Vec::new())))
+}
+
+/// Lists recent messages of a space, newest first.
+pub fn list_messages(space_name: &str, page_size: f64) -> Result<Vec<Json>, Fail> {
+    match list_messages_value(space_name, page_size)? {
+        Json::Arr(messages) => Ok(messages),
+        _ => unsupported("gws returned `messages` that is not a list"),
     }
 }
 
