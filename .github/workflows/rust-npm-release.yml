@@ -44,5 +44,15 @@ jobs:
       # The binary hands back to ts/cli.ts, which needs no build. dist/cli.js
       # is built because the package ships it today (`files` lists dist/).
       js-build: bun install --frozen-lockfile && bun run build
+      # Rust against TypeScript, on the Linux binary that was just built.
+      # The cases carry the checkout's path (for the fake gws, and for the
+      # JavaScript a handed-back invocation runs), so they are written afresh.
+      parity: bun install --frozen-lockfile && node rs/parity.gen.mjs && node "$RUSTIFY_PARITY" --cases rs/parity.json --ts "bun ts/cli.ts" --rs "$RUSTIFY_BIN_DIR/gchat-cli"
+      # Run once on every platform after installing. The first is answered by
+      # yargs. The second is a ported command on a machine without gws: Rust
+      # takes it, cannot start gws, and hands it back, and the JavaScript then
+      # prints the confirm prompt. It is the first step of a send, which only
+      # asks; nothing is posted and there is no gws to post with.
       smoke-extra: |
         gchat --help => gchat <command> [args]
+        gchat send spaces/RUSTIFY-SMOKE hello => Re-run within 60s with --code=4149dc5a to send.
