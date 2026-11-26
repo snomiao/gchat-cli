@@ -7,9 +7,8 @@ use crate::rt::{self, null_access, unsupported, Fail, GwsError};
 
 /// `process.env.GCHAT_GWS_BIN || "gws"`.
 fn gws_bin() -> Result<String, Fail> {
-    match std::env::var_os("GCHAT_GWS_BIN") {
+    match std::env::var_os("GCHAT_GWS_BIN").filter(|value| !value.is_empty()) {
         None => Ok("gws".to_string()),
-        Some(value) if value.is_empty() => Ok("gws".to_string()),
         Some(value) => value.into_string().or_else(|_| unsupported("GCHAT_GWS_BIN is not valid Unicode")),
     }
 }

@@ -159,6 +159,23 @@ export default function ({ add, back, late, rule, json, apiError, AUTH_STATUS, S
   back("auth: camel-case spelling of nothing", ["auth", "--Format", "json"], { gws: status({}) });
 
   // ── how gws is found ──
+  // Every other case leaves GCHAT_GWS_BIN unset and finds `gws` on PATH, as a
+  // user's shell does. These are the cases about the variable itself.
+  const ok = status({ auth_method: "oauth2", scopes: ALL_SCOPES });
+  add("auth: GCHAT_GWS_BIN empty means gws from PATH", ["auth"], { env: { GCHAT_GWS_BIN: "" }, gws: ok });
+  add("auth: GCHAT_GWS_BIN names gws by its full path", ["auth"], { env: { GCHAT_GWS_BIN: `${FAKE_DIR}/gws` }, gws: ok });
+  add("auth: GCHAT_GWS_BIN relative to the working directory", ["auth"], {
+    env: { GCHAT_GWS_BIN: "./my-gws" },
+    files: { "my-gws": '#!/bin/sh\nexec "$PARITY_FAKE" "$@"\n' },
+    setup: ["chmod +x my-gws"],
+    gws: ok,
+  });
+  add("auth: GCHAT_GWS_BIN names another program on PATH", ["auth"], {
+    env: { GCHAT_GWS_BIN: "other-gws", PATH: `${FAKE_DIR}:${BUN_DIR}:/usr/bin:/bin:bin` },
+    files: { "bin/other-gws": '#!/bin/sh\nexec "$PARITY_FAKE" "$@"\n' },
+    setup: ["chmod +x bin/other-gws"],
+    gws: ok,
+  });
   // A gws that cannot be started is reported in the JavaScript runtime's own
   // words ("Executable not found in $PATH", "ENOENT: …, posix_spawn"), so the
   // binary hands those invocations back: nothing has happened yet.
@@ -166,12 +183,6 @@ export default function ({ add, back, late, rule, json, apiError, AUTH_STATUS, S
   back("auth: gws that does not exist (bare name)", ["auth"], { env: { GCHAT_GWS_BIN: "gchat-parity-no-such-binary" } });
   back("auth: gws that is not executable", ["auth"], { env: { GCHAT_GWS_BIN: "./plain-file" }, files: { "plain-file": "echo {}\n" } });
   back("auth: gws that is a directory", ["auth"], { env: { GCHAT_GWS_BIN: "./tmp" } });
-  add("auth: gws given relative to the working directory", ["auth"], {
-    env: { GCHAT_GWS_BIN: "./my-gws" },
-    files: { "my-gws": `#!/bin/sh\nexec ${sq(`${FAKE_DIR}/gws`)} "$@"\n` },
-    setup: ["chmod +x my-gws"],
-    gws: status({ auth_method: "oauth2", scopes: ALL_SCOPES }),
-  });
   back("auth: gws that is a text file without an interpreter line", ["auth"], {
     env: { GCHAT_GWS_BIN: "./no-shebang" },
     files: { "no-shebang": "echo '{}'\n" },
@@ -181,20 +192,6 @@ export default function ({ add, back, late, rule, json, apiError, AUTH_STATUS, S
     env: { GCHAT_GWS_BIN: "./bad-shebang" },
     files: { "bad-shebang": "#!/nonexistent/interpreter\n" },
     setup: ["chmod +x bad-shebang"],
-  });
-  // The default name, looked up on PATH. PATH is replaced so that nothing but
-  // the fake can be found under the name `gws`, whatever the machine has.
-  const fakeFirst = { PATH: `${FAKE_DIR}:${BUN_DIR}:/usr/bin:/bin` };
-  const onlyFake = `test "$(command -v gws)" = ${sq(`${FAKE_DIR}/gws`)}`;
-  add("auth: GCHAT_GWS_BIN unset, gws from PATH", ["auth"], {
-    env: { GCHAT_GWS_BIN: null, ...fakeFirst },
-    setup: [onlyFake],
-    gws: status({ auth_method: "oauth2", scopes: ALL_SCOPES }),
-  });
-  add("auth: GCHAT_GWS_BIN empty, gws from PATH", ["auth"], {
-    env: { GCHAT_GWS_BIN: "", ...fakeFirst },
-    setup: [onlyFake],
-    gws: status({ auth_method: "oauth2", scopes: [] }),
   });
   back("auth: GCHAT_CLI_NO_NATIVE hands everything back", ["auth"], {
     env: { GCHAT_CLI_NO_NATIVE: "1" },

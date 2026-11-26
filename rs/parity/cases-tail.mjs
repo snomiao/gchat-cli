@@ -168,7 +168,7 @@ export default function (kit) {
   back("tail: gws cannot be started", ["tail", DIRECT, "--timeout", "0"], { env: { GCHAT_GWS_BIN: "/nonexistent/gws" } });
   late("tail: gws disappears after resolving the space", ["tail", "Engineering", "--timeout", "0"], {
     env: { GCHAT_GWS_BIN: "./gws-once" },
-    files: { "gws-once": `#!/bin/sh\nrm -f ./gws-once\nexec '${kit.FAKE}' "$@"\n` },
+    files: { "gws-once": '#!/bin/sh\nrm -f ./gws-once\nexec "$PARITY_FAKE" "$@"\n' },
     setup: ["chmod +x gws-once"],
     gws: [spacesRule(), messagesRule()],
   });

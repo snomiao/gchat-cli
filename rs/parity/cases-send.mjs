@@ -87,7 +87,7 @@ export default function (kit) {
   add("send: confirm after 55 seconds", confirm(DIRECT, "hello"), { gws: world, ...pending(DIRECT, "hello", 55), after: both });
   add("send: confirm what the TypeScript's first call stored", confirm("Engineering:THR1", "from the first call"), {
     gws: world,
-    setup: [`bun ${sq(`${REPO}/ts/cli.ts`)} send Engineering:THR1 'from the first call' > first-call.txt`],
+    setup: [`bun "$PARITY_REPO/ts/cli.ts" send Engineering:THR1 'from the first call' > first-call.txt`],
     after: [CALLS, PENDING, "cat first-call.txt"],
   });
   add("send: the reply hint uses the thread gws returned", confirm(DIRECT, "hello"), {
