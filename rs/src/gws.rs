@@ -113,7 +113,7 @@ fn run_gws(args: &[String], irreversible: bool) -> Result<RunResult, Fail> {
     if irreversible {
         rt::commit();
     }
-    let output = match child.wait_with_output() {
+    let output = match rt::waiting(|| child.wait_with_output()) {
         Ok(output) => output,
         Err(error) => return Err(Fail::Gws(GwsError::new(format!("failed to run \"{bin}\": {error}. Is gws installed and on PATH?")))),
     };

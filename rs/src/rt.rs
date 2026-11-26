@@ -8,8 +8,10 @@
 //! `Fail::Unsupported` and the invocation is handed back, as long as nothing
 //! the user could notice has happened yet.
 
+use std::cell::RefCell;
 use std::io::Write as _;
 use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::{mpsc, Arc, Mutex, MutexGuard};
 
 use crate::json::Json;
 
@@ -95,6 +97,99 @@ pub fn err(line: &str) {
     commit();
     let mut stderr = std::io::stderr().lock();
     let _ = stderr.write_all(line.as_bytes()).and_then(|_| stderr.write_all(b"\n"));
+}
+
+// ── several things at once, the way JavaScript does them ─────────────────────
+//
+// `watch` runs several tails at once. In JavaScript that is one thread: a
+// task runs until it waits for something outside (a gws process, a timer),
+// and only then does another task run. Here every task is a thread, and the
+// turn below is what makes them behave like that: a task holds it while it
+// runs and gives it up only while it waits. A command that does one thing at
+// a time never takes it, and nothing below costs it anything.
+
+static TURN: Mutex<()> = Mutex::new(());
+/// Held while tasks are being started, so that a task that has finished
+/// waiting cannot run before all of them have had their first turn (as none
+/// can in JavaScript before `items.map(async …)` has gone through the list).
+static STARTING: Mutex<()> = Mutex::new(());
+
+thread_local! {
+    static MY_TURN: RefCell<Option<MutexGuard<'static, ()>>> = const { RefCell::new(None) };
+    /// Tells whoever started this task that it has reached its first wait.
+    static FIRST_WAIT: RefCell<Option<mpsc::Sender<()>>> = const { RefCell::new(None) };
+}
+
+fn lock(mutex: &'static Mutex<()>) -> MutexGuard<'static, ()> {
+    mutex.lock().unwrap_or_else(|poisoned| poisoned.into_inner())
+}
+
+fn take_turn() {
+    let turn = lock(&TURN);
+    MY_TURN.with(|mine| *mine.borrow_mut() = Some(turn));
+}
+
+fn give_turn() -> bool {
+    MY_TURN.with(|mine| mine.borrow_mut().take()).is_some()
+}
+
+fn reached_first_wait() {
+    if let Some(started) = FIRST_WAIT.with(|first| first.borrow_mut().take()) {
+        let _ = started.send(());
+    }
+}
+
+/// Waits for something outside this process (`await` on a child process or a
+/// timer). Other tasks run meanwhile.
+pub fn waiting<T>(wait: impl FnOnce() -> T) -> T {
+    reached_first_wait();
+    let had_turn = give_turn();
+    let value = wait();
+    if had_turn {
+        drop(lock(&STARTING));
+        take_turn();
+    }
+    value
+}
+
+/// `await Promise.all(items.map(async (item) => task(item)))`: every task is
+/// started in order and runs up to its first wait before the next one starts;
+/// the results come back in the order of the items. A task that fails ends
+/// the process itself (see `fail`), which is what a rejection does here.
+pub fn all<T, R>(items: Vec<T>, task: impl Fn(T) -> R + Send + Sync + 'static) -> Vec<R>
+where
+    T: Send + 'static,
+    R: Send + 'static,
+{
+    let task = Arc::new(task);
+    if MY_TURN.with(|mine| mine.borrow().is_none()) {
+        take_turn();
+    }
+    let starting = lock(&STARTING);
+    let mut tasks = Vec::new();
+    for item in items {
+        let (started, has_started) = mpsc::channel();
+        let task = Arc::clone(&task);
+        tasks.push(std::thread::spawn(move || {
+            take_turn();
+            FIRST_WAIT.with(|first| *first.borrow_mut() = Some(started));
+            let result = task(item);
+            reached_first_wait();
+            give_turn();
+            result
+        }));
+        give_turn();
+        // Err when the task ended without waiting or without returning.
+        let _ = has_started.recv();
+        take_turn();
+    }
+    drop(starting);
+    tasks.into_iter().map(|task| waiting(|| task.join()).unwrap_or_else(|_| std::process::exit(101))).collect()
+}
+
+/// Ends the process for a failed task, as an uncaught rejection does.
+pub fn fail(fail: Fail) -> ! {
+    finish(Err(fail))
 }
 
 /// Runs a ported command to its end.

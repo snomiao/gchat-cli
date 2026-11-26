@@ -28,7 +28,7 @@ const SPEC: Spec = Spec {
 };
 
 /// The longest `setTimeout` takes: past it the JavaScript timer fires at once.
-const MAX_INTERVAL_SEC: f64 = 2_147_483.0;
+pub const MAX_INTERVAL_SEC: f64 = 2_147_483.0;
 
 pub fn command(rest: &[String]) -> Option<impl FnOnce() -> Result<i32, Fail>> {
     let parsed = args::parse(rest, &SPEC)?;
@@ -140,9 +140,11 @@ fn render(m: &Json, tail: &Tail, lenient: bool) -> Result<String, Fail> {
 }
 
 fn sleep(ms: f64) {
-    if ms > 0.0 {
-        std::thread::sleep(Duration::from_secs_f64(ms / 1000.0));
-    }
+    rt::waiting(|| {
+        if ms > 0.0 {
+            std::thread::sleep(Duration::from_secs_f64(ms / 1000.0));
+        }
+    })
 }
 
 pub fn tail_space(tail: &Tail) -> Result<i32, Fail> {

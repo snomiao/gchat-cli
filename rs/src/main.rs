@@ -53,6 +53,7 @@ fn main() {
         Some("read") if native() => run!(commands::read::command),
         Some("send") if native() => run!(commands::send::command),
         Some("tail") if native() => run!(commands::tail::command),
+        Some("watch") if native() => run!(commands::watch::command),
         _ => {}
     }
     js_fallback::run(JS_ENTRY)

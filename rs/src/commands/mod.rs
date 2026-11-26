@@ -5,3 +5,4 @@ pub mod read;
 pub mod send;
 pub mod spaces;
 pub mod tail;
+pub mod watch;
