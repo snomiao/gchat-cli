@@ -2198,6 +2198,1237 @@
     "cat gws-calls.jsonl"
    ],
    "handed": "back"
+  },
+  {
+   "name": "spaces: table, newest activity first",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: rooms is the same command",
+   "args": [
+    "rooms"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: ls is the same command",
+   "args": [
+    "ls"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: --format table",
+   "args": [
+    "spaces",
+    "--format",
+    "table"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: --format=table",
+   "args": [
+    "ls",
+    "--format=table"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: none at all",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: an empty list",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: one direct message",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: columns grow with the longest id and type",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/A\",\"displayName\":\"short id\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-01T00:00:00Z\"},{\"name\":\"spaces/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\"displayName\":\"long id\",\"spaceType\":\"GROUP_CHAT\",\"lastActiveTime\":\"2026-07-02T00:00:00Z\"},{\"name\":\"spaces/B\",\"displayName\":\"type unknown to gchat\",\"spaceType\":\"SPACE_TYPE_UNSPECIFIED\",\"lastActiveTime\":\"2026-07-03T00:00:00Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: narrow columns keep the header width",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/A\",\"displayName\":\"x\",\"spaceType\":\"DM\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: type words are replaced once, in order",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/1\",\"displayName\":\"a\",\"spaceType\":\"SPACE SPACE\"},{\"name\":\"spaces/2\",\"displayName\":\"b\",\"spaceType\":\"DIRECT_MESSAGE DIRECT_MESSAGE SPACE\"},{\"name\":\"spaces/3\",\"displayName\":\"c\",\"spaceType\":\"MY_SPACE_DIRECT_MESSAGE\"},{\"name\":\"spaces/4\",\"displayName\":\"d\",\"spaceType\":\"space\"},{\"name\":\"spaces/5\",\"displayName\":\"e\",\"spaceType\":\"\"},{\"name\":\"spaces/6\",\"displayName\":\"f\"},{\"name\":\"spaces/7\",\"displayName\":\"g\",\"spaceType\":null}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: empty and missing names",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/E1\",\"displayName\":\"\",\"spaceType\":\"SPACE\"},{\"name\":\"spaces/E2\",\"displayName\":null,\"spaceType\":\"SPACE\"},{\"name\":\"spaces/E3\",\"spaceType\":\"SPACE\"},{\"name\":\"spaces/E4\",\"displayName\":\"  padded name  \",\"spaceType\":\"SPACE\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: names that are not under spaces/",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"rooms/R1\",\"displayName\":\"other prefix\",\"spaceType\":\"SPACE\"},{\"name\":\"spaces/spaces/S2\",\"displayName\":\"prefix twice\",\"spaceType\":\"SPACE\"},{\"name\":\"\",\"displayName\":\"no name\",\"spaceType\":\"SPACE\"},{\"name\":\"spaces/\",\"displayName\":\"only the prefix\",\"spaceType\":\"SPACE\"},{\"name\":\"xspaces/S5\",\"displayName\":\"prefix inside\",\"spaceType\":\"SPACE\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: wide characters count by UTF-16 length",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/日本語\",\"displayName\":\"non-ASCII id\",\"spaceType\":\"SPACE\"},{\"name\":\"spaces/😀😀\",\"displayName\":\"emoji id\",\"spaceType\":\"ルーム\"},{\"name\":\"spaces/abcdef\",\"displayName\":\"plain\",\"spaceType\":\"SPACE\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: order by last activity, missing last, ties keep their order",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/none1\",\"displayName\":\"no activity, first\"},{\"name\":\"spaces/t2a\",\"displayName\":\"second, tie a\",\"lastActiveTime\":\"2026-07-02T00:00:00Z\"},{\"name\":\"spaces/t1\",\"displayName\":\"oldest\",\"lastActiveTime\":\"2026-07-01T00:00:00Z\"},{\"name\":\"spaces/t2b\",\"displayName\":\"second, tie b\",\"lastActiveTime\":\"2026-07-02T00:00:00Z\"},{\"name\":\"spaces/none2\",\"displayName\":\"no activity, second\",\"lastActiveTime\":null},{\"name\":\"spaces/t3\",\"displayName\":\"newest\",\"lastActiveTime\":\"2026-07-03T00:00:00Z\"},{\"name\":\"spaces/t2c\",\"displayName\":\"second, tie c\",\"lastActiveTime\":\"2026-07-02T00:00:00Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: order with and without fractions of a second",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/f1\",\"displayName\":\"no fraction\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"},{\"name\":\"spaces/f2\",\"displayName\":\".5\",\"lastActiveTime\":\"2026-07-07T07:41:50.5Z\"},{\"name\":\"spaces/f3\",\"displayName\":\".123456\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\"},{\"name\":\"spaces/f4\",\"displayName\":\".500\",\"lastActiveTime\":\"2026-07-07T07:41:50.500Z\"},{\"name\":\"spaces/f5\",\"displayName\":\".55\",\"lastActiveTime\":\"2026-07-07T07:41:50.55Z\"},{\"name\":\"spaces/f6\",\"displayName\":\"next second\",\"lastActiveTime\":\"2026-07-07T07:41:51Z\"},{\"name\":\"spaces/f7\",\"displayName\":\".000000001\",\"lastActiveTime\":\"2026-07-07T07:41:50.000000001Z\"},{\"name\":\"spaces/f8\",\"displayName\":\"previous second .999\",\"lastActiveTime\":\"2026-07-07T07:41:49.999Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: order across years, months and days",
+   "args": [
+    "spaces",
+    "--format",
+    "json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/y1\",\"lastActiveTime\":\"2019-12-31T23:59:59Z\"},{\"name\":\"spaces/y2\",\"lastActiveTime\":\"2030-01-01T00:00:00Z\"},{\"name\":\"spaces/y3\",\"lastActiveTime\":\"2026-10-09T08:07:06Z\"},{\"name\":\"spaces/y4\",\"lastActiveTime\":\"2026-09-10T08:07:06Z\"},{\"name\":\"spaces/y5\",\"lastActiveTime\":\"2026-10-09T18:07:06Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: --format json prints what gws returned, sorted",
+   "args": [
+    "spaces",
+    "--format",
+    "json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: --format=json with nothing",
+   "args": [
+    "rooms",
+    "--format=json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: json keeps fields gchat does not know",
+   "args": [
+    "ls",
+    "--format",
+    "json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/X\",\"extra\":{\"1\":\"one\",\"3\":\"three\",\"deep\":[1,2.5,{\"z\":null}]},\"displayName\":\"x\",\"flag\":false,\"n\":1e+21}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: three pages",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"}],\"nextPageToken\":\"page-2\"}},{\"json\":{\"spaces\":[{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"}],\"nextPageToken\":\"tok \\\"quoted\\\" \\\\ back/slash é 日本 😀\\n\\ttab\"}},{\"json\":{\"spaces\":[{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: a page without spaces in the middle",
+   "args": [
+    "spaces",
+    "--format",
+    "json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"nextPageToken\":\"a\"}},{\"json\":{\"spaces\":null,\"nextPageToken\":\"b\"}},{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}],\"nextPageToken\":\"\"}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: page tokens that are not strings",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}],\"nextPageToken\":7}},{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"}],\"nextPageToken\":{\"cursor\":[1,2]}}},{\"json\":{\"spaces\":[{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"}],\"nextPageToken\":true}},{\"json\":{\"spaces\":[{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"}],\"nextPageToken\":0}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: an error on the second page",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}],\"nextPageToken\":\"p2\"}},{\"json\":{\"error\":{\"code\":500,\"message\":\"Internal error encountered.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: Internal error encountered.\\n\",\"exit\":1}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: answers that are not objects have no spaces",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"stdout\":\"[1,2]\"}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: falsy spaces are no spaces",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":0}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ]
+  },
+  {
+   "name": "spaces: rewrites a fresh cache",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}]}}]}]}",
+    "cache.tpl": "{\n  \"fetched_at\": __T__,\n  \"spaces\": [\n    {\n      \"name\": \"spaces/OLD\",\n      \"displayName\": \"old\",\n      \"type\": \"SPACE\"\n    }\n  ]\n}\n"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'",
+    "mkdir -p \"$HOME/.config/gchat-cli\" && sed \"s/__T__/$(( ($(date +%s) - 0) * 1000 ))/\" cache.tpl > \"$HOME/.config/gchat-cli/spaces.json\""
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: rewrites a broken cache",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"}]}}]}]}",
+    "cache.tpl": "{ not json"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'",
+    "mkdir -p \"$HOME/.config/gchat-cli\" && sed \"s/__T__/$(( ($(date +%s) - 0) * 1000 ))/\" cache.tpl > \"$HOME/.config/gchat-cli/spaces.json\""
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: creates only what is missing under HOME",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'",
+    "mkdir -m 755 \"$HOME/.config\""
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: keeps the mode of an existing cache file",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"}]}}]}]}",
+    "cache.tpl": "{\n  \"fetched_at\": __T__,\n  \"spaces\": []\n}\n"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'",
+    "mkdir -p \"$HOME/.config/gchat-cli\" && sed \"s/__T__/$(( ($(date +%s) - 0) * 1000 ))/\" cache.tpl > \"$HOME/.config/gchat-cli/spaces.json\"",
+    "chmod 600 \"$HOME/.config/gchat-cli/spaces.json\"; chmod 750 \"$HOME/.config/gchat-cli\""
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: HOME is normalized like path.join",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case",
+    "HOME": "./h//x/../"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'",
+    "mkdir h"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat h/.config/gchat-cli/spaces.json; find h -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: nothing is cached when gws fails",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"error\":{\"code\":403,\"message\":\"Request had insufficient authentication scopes.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: Request had insufficient authentication scopes.\\n\",\"exit\":1}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: gws error keeps the old cache",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/nonexistent/no-javascript-for-this-case"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"error\":{\"code\":503,\"message\":\"The service is currently unavailable.\",\"reason\":\"unknown\"}},\"stderr\":\"error[api]: The service is currently unavailable.\\n\",\"exit\":1}]}]}",
+    "cache.tpl": "{\n  \"fetched_at\": __T__,\n  \"spaces\": [\n    {\n      \"name\": \"spaces/OLD\",\n      \"displayName\": \"old\",\n      \"type\": \"SPACE\"\n    }\n  ]\n}\n"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'",
+    "mkdir -p \"$HOME/.config/gchat-cli\" && sed \"s/__T__/$(( ($(date +%s) - 1000) * 1000 ))/\" cache.tpl > \"$HOME/.config/gchat-cli/spaces.json\""
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ]
+  },
+  {
+   "name": "spaces: activity time in another notation",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/a\",\"displayName\":\"a\",\"lastActiveTime\":\"2026-07-07 07:41:50\"},{\"name\":\"spaces/b\",\"displayName\":\"b\",\"lastActiveTime\":\"07/08/2026\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: activity time with an offset",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/a\",\"displayName\":\"a\",\"lastActiveTime\":\"2026-07-07T07:41:50+09:00\"},{\"name\":\"spaces/b\",\"displayName\":\"b\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: activity time that is a number",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/a\",\"lastActiveTime\":5},{\"name\":\"spaces/b\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: a space without a name",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"displayName\":\"nameless\"},{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: a space without a name, as json",
+   "args": [
+    "spaces",
+    "--format",
+    "json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"displayName\":\"nameless\"},{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: a space that is null",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},null]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: a space that is a string",
+   "args": [
+    "spaces",
+    "--format",
+    "json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[\"spaces/x\",{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: a display name that is a number",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/a\",\"displayName\":42}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: a type that is a number",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/a\",\"displayName\":\"a\",\"spaceType\":3}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: spaces that is a string",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":\"abc\"}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: spaces that is an object",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":{\"0\":{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}}}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: empty output from gws",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: HOME that cannot be written",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port",
+    "HOME": "/proc/gchat-parity-no-such-home"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "sort -u gws-calls.jsonl"
+   ],
+   "handed": "late"
+  },
+  {
+   "name": "spaces: unknown format",
+   "args": [
+    "spaces",
+    "--format",
+    "text"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "spaces: --refresh is not an option",
+   "args": [
+    "spaces",
+    "--refresh"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "spaces: --json is not an option",
+   "args": [
+    "ls",
+    "--json"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "spaces: unexpected argument",
+   "args": [
+    "spaces",
+    "eng"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "spaces: --help",
+   "args": [
+    "rooms",
+    "--help"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "spaces: -n is not an option here",
+   "args": [
+    "spaces",
+    "-n",
+    "5"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "spaces: an alias that does not exist",
+   "args": [
+    "list"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl"
+   ],
+   "handed": "back"
+  },
+  {
+   "name": "spaces: GCHAT_CLI_NO_NATIVE hands it back",
+   "args": [
+    "spaces"
+   ],
+   "env": {
+    "TZ": "UTC",
+    "GCHAT_GWS_BIN": "/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws",
+    "GCHAT_CLI_PACKAGE_ROOT": "/code/snomiao/gchat-cli/tree/build-rust-port",
+    "GCHAT_CLI_NO_NATIVE": "1"
+   },
+   "files": {
+    "tmp/.keep": "",
+    "gws.json": "{\"rules\":[{\"args\":[\"chat\",\"spaces\",\"list\"],\"replies\":[{\"json\":{\"spaces\":[{\"name\":\"spaces/AAAAeng1\",\"displayName\":\"Engineering\",\"spaceType\":\"SPACE\",\"spaceUri\":\"https://chat.google.com/room/AAAAeng1\",\"lastActiveTime\":\"2026-07-07T07:41:50.123456Z\",\"membershipCount\":{\"joinedDirectHumanUserCount\":12}},{\"name\":\"spaces/AAAAeng2\",\"displayName\":\"Engineering Leads\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-08T01:00:00Z\"},{\"name\":\"spaces/BBBBdm01\",\"spaceType\":\"DIRECT_MESSAGE\",\"lastActiveTime\":\"2026-07-06T10:00:00.500Z\"},{\"name\":\"spaces/CCCCgrp1\",\"displayName\":\"launch party 🚀\",\"spaceType\":\"GROUP_CHAT\"},{\"name\":\"spaces/DDDDja01\",\"displayName\":\"日本語チーム\",\"spaceType\":\"SPACE\",\"lastActiveTime\":\"2026-07-07T07:41:50Z\"}]}}]}]}"
+   },
+   "setup": [
+    "test -x '/code/snomiao/gchat-cli/tree/build-rust-port/rs/parity/gws' && test -f '/code/snomiao/gchat-cli/tree/build-rust-port/ts/cli.ts' && test -d '/code/snomiao/gchat-cli/tree/build-rust-port/node_modules/yargs'"
+   ],
+   "after": [
+    "cat gws-calls.jsonl",
+    "cat \"$HOME/.config/gchat-cli/spaces.json\"; find \"$HOME/.config\" -printf '%M %P\\n' | sort"
+   ],
+   "handed": "back"
   }
  ]
 }
