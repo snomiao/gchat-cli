@@ -1,0 +1,4 @@
+#!/bin/sh
+# The fake gws of the parity cases (see fake-gws.mjs). Named `gws` so that a
+# case can also put this directory on PATH and prove the default binary name.
+exec bun "$(dirname "$0")/fake-gws.mjs" "$@"
