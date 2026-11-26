@@ -51,5 +51,12 @@
   "overrides": {
     "@semantic-release/npm": "^13",
     "@semantic-release/github": "^12"
+  },
+  "rustify": {
+    "mode": "hybrid",
+    "bins": {
+      "gchat": "gchat-cli"
+    },
+    "rootEnv": "GCHAT_CLI_PACKAGE_ROOT"
   }
 }
