@@ -23,16 +23,26 @@ impl From<TypeError> for Fail {
     }
 }
 
-/// The time zone `Date` uses for local time. The JavaScript runtime finds it
-/// through ICU and Rust through the tz database; they agree for a zone named
-/// in `TZ` and for the system's zone, and other `TZ` forms are not taken on.
+/// A zone by name. The database compiled into the binary is asked first, as
+/// the JavaScript runtime also carries its own (ICU's): the answer then does
+/// not depend on which zone files a machine has installed.
+fn zone(name: &str) -> Option<TimeZone> {
+    jiff::tz::TimeZoneDatabase::bundled().get(name).or_else(|_| TimeZone::get(name)).ok()
+}
+
+/// The time zone `Date` uses for local time: the one named in `TZ`, else the
+/// system's. `TZ` can also hold a rule or a path, which the JavaScript
+/// runtime reads its own way; those are not taken on.
 fn local_zone() -> Result<TimeZone, Fail> {
     match std::env::var_os("TZ") {
-        Some(tz) => match tz.to_str().filter(|name| !name.is_empty()).map(TimeZone::get) {
-            Some(Ok(zone)) => Ok(zone),
-            _ => unsupported(format!("TZ={} is not the name of a time zone", tz.to_string_lossy())),
+        Some(tz) => match tz.to_str().filter(|name| !name.is_empty()).and_then(zone) {
+            Some(zone) => Ok(zone),
+            None => unsupported(format!("TZ={} is not the name of a time zone", tz.to_string_lossy())),
         },
-        None => TimeZone::try_system().or_else(|e| unsupported(format!("no system time zone: {e}"))),
+        None => match TimeZone::try_system() {
+            Ok(system) => Ok(system.iana_name().and_then(zone).unwrap_or(system)),
+            Err(error) => unsupported(format!("no system time zone: {error}")),
+        },
     }
 }
 
