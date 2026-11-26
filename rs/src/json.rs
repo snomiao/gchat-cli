@@ -167,7 +167,7 @@ fn write_value(out: &mut String, value: &Json, indent: Option<usize>, depth: usi
     let newline = |out: &mut String, depth: usize| {
         if let Some(width) = indent {
             out.push('\n');
-            out.extend(std::iter::repeat(' ').take(width * depth));
+            out.extend(std::iter::repeat_n(' ', width * depth));
         }
     };
     match value {
@@ -262,14 +262,14 @@ pub fn number_to_string(n: f64) -> String {
     }
     if k <= point && point <= 21 {
         out.push_str(&digits);
-        out.extend(std::iter::repeat('0').take((point - k) as usize));
+        out.extend(std::iter::repeat_n('0', (point - k) as usize));
     } else if 0 < point && point <= 21 {
         out.push_str(&digits[..point as usize]);
         out.push('.');
         out.push_str(&digits[point as usize..]);
     } else if -6 < point && point <= 0 {
         out.push_str("0.");
-        out.extend(std::iter::repeat('0').take((-point) as usize));
+        out.extend(std::iter::repeat_n('0', (-point) as usize));
         out.push_str(&digits);
     } else {
         let e = point - 1;
