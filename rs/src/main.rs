@@ -5,7 +5,15 @@
 //! TypeScript; until then it is handed back to the JavaScript the package
 //! still ships, so nothing changes for users.
 
+mod args;
+mod commands;
+mod config;
+mod format;
+mod gws;
 mod js_fallback;
+mod json;
+mod resolver;
+mod rt;
 
 /// The package's JavaScript entry, relative to the package root.
 ///
@@ -19,7 +27,6 @@ const JS_ENTRY: &str = "ts/cli.ts";
 
 /// `GCHAT_CLI_NO_NATIVE=1` hands every command back to the JavaScript: the way
 /// out for a user if a ported command misbehaves.
-#[allow(dead_code)]
 fn native() -> bool {
     std::env::var_os("GCHAT_CLI_NO_NATIVE").is_none()
 }
@@ -29,9 +36,20 @@ fn main() {
     // Rust does not handle (`std::env::args` would panic on it).
     let args: Option<Vec<String>> = std::env::args_os().skip(1).map(|a| a.into_string().ok()).collect();
     let Some(args) = args else { js_fallback::run(JS_ENTRY) };
-    match args.first().map(String::as_str) {
-        // Ported commands go here, one arm each, once their parity cases pass:
-        //   Some("status") if native() => status::run(&args[1..]),
-        _ => js_fallback::run(JS_ENTRY),
+    // A ported command takes the invocation only when its arguments are in
+    // the plain form it reproduces; `command` is `None` for anything else
+    // (usage errors, --help, unusual spellings), which yargs still answers.
+    macro_rules! run {
+        ($command:path) => {
+            if let Some(command) = $command(&args[1..]) {
+                rt::finish(command())
+            }
+        };
     }
+    match args.first().map(String::as_str) {
+        // One arm per ported command, added once its parity cases pass.
+        Some("auth") if native() => run!(commands::auth::command),
+        _ => {}
+    }
+    js_fallback::run(JS_ENTRY)
 }
