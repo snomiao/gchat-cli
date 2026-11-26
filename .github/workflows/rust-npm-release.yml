@@ -36,9 +36,13 @@ jobs:
     with:
       manifest: rs/Cargo.toml
       bins: gchat-cli
-      # Handed back to the JavaScript, which reads the version from the
-      # package.json it is installed with.
-      smoke: gchat --version
+      # The install test's main command. Not `gchat --version`: that is
+      # yargs's, and installed with `bun i -g` it prints "unknown", today's
+      # TypeScript-only package included (yargs looks for package.json above
+      # the node_modules that holds yargs, which bun keeps flat). --help is
+      # handed back the same way and prints the same text everywhere.
+      smoke: gchat --help
+      smoke-expect: gchat <command> [args]
       version: ${{ inputs.version }}
       npm-tag: ${{ inputs.npm_tag || 'latest' }}
       # The binary hands back to ts/cli.ts, which needs no build. dist/cli.js
@@ -48,11 +52,11 @@ jobs:
       # The cases carry the checkout's path (for the fake gws, and for the
       # JavaScript a handed-back invocation runs), so they are written afresh.
       parity: bun install --frozen-lockfile && node rs/parity.gen.mjs && node "$RUSTIFY_PARITY" --cases rs/parity.json --ts "bun ts/cli.ts" --rs "$RUSTIFY_BIN_DIR/gchat-cli"
-      # Run once on every platform after installing. The first is answered by
-      # yargs. The second is a ported command on a machine without gws: Rust
-      # takes it, cannot start gws, and hands it back, and the JavaScript then
-      # prints the confirm prompt. It is the first step of a send, which only
-      # asks; nothing is posted and there is no gws to post with.
+      # Run once on every platform after installing. --version only has to
+      # exit 0 (see above). The other is a ported command on a machine without
+      # gws: Rust takes it, cannot start gws, and hands it back, and the
+      # JavaScript then prints the confirm prompt. It is the first step of a
+      # send, which only asks; nothing is posted and there is no gws to post with.
       smoke-extra: |
-        gchat --help => gchat <command> [args]
+        gchat --version =>
         gchat send spaces/RUSTIFY-SMOKE hello => Re-run within 60s with --code=4149dc5a to send.
